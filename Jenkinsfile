@@ -3,7 +3,7 @@ agent any
 stages {
 stage('Clone Code') {
 steps {
-git 'https://github.com/your-repo/simple-devops-project.git'
+git 'https://github.com/madhavigurrala/Docker.git'
 }
 }
 stage('Build Docker Image') {
@@ -18,3 +18,4 @@ sh 'docker run -d -p 5000:5000 student-app'
 }
 }
 }
+
