@@ -1,21 +1,19 @@
 pipeline {
-agent any
-stages {
-stage('Clone Code') {
-steps {
-git 'https://github.com/madhavigurrala/Docker.git'
-}
-}
-stage('Build Docker Image') {
-steps {
-sh 'docker build -t student-app .'
-}
-}
-stage('Run Container') {
-steps {
-sh 'docker run -d -p 5000:5000 student-app'
-}
-}
-}
-}
+    agent any
 
+    stages {
+
+        stage('Build Docker Image') {
+            steps {
+                bat 'docker build -t student-app .'
+            }
+        }
+
+        stage('Run Container') {
+            steps {
+                bat 'docker run -d -p 5000:5000 student-app'
+            }
+        }
+
+    }
+}
